@@ -1,4 +1,4 @@
 package com.robloxhackerman.subme.repository;
 
-public class SubscriptionRepository {
+public interface SubscriptionRepository {
 }
