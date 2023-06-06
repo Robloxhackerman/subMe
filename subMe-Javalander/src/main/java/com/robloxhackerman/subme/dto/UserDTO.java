@@ -1,17 +1,16 @@
 package com.robloxhackerman.subme.dto;
 
-import com.robloxhackerman.subme.entity.SubscrictionCard;
-import jakarta.persistence.*;
+import com.robloxhackerman.subme.entity.SubscriptionCard;
 
 import java.util.List;
 import java.util.UUID;
 
 public class UserDTO {
     private UUID userId;
-    private String UserName;
+    private String userName;
     private String userEmail;
     private String userPassword;
-    private List<SubscrictionCard> userSubscription;
+    private List<SubscriptionCard> userSubscription;
 
     public UserDTO() {
     }
@@ -25,11 +24,11 @@ public class UserDTO {
     }
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
     public String getUserEmail() {
@@ -48,11 +47,11 @@ public class UserDTO {
         this.userPassword = userPassword;
     }
 
-    public List<SubscrictionCard> getUserSubscription() {
+    public List<SubscriptionCard> getUserSubscription() {
         return userSubscription;
     }
 
-    public void setUserSubscription(List<SubscrictionCard> userSubscription) {
+    public void setUserSubscription(List<SubscriptionCard> userSubscription) {
         this.userSubscription = userSubscription;
     }
 }

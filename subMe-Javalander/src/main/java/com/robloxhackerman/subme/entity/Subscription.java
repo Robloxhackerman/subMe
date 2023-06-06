@@ -14,7 +14,7 @@ public class Subscription {
     private Float subscriptionPrice;
     private Date subscriptionEnd;
     @ManyToOne
-    private SubscrictionCard subscriptionOwner;
+    private SubscriptionCard subscriptionOwner;
 
     public Long getSubscriptionId() {
         return subscriptionId;
@@ -48,11 +48,11 @@ public class Subscription {
         this.subscriptionEnd = subscriptionEnd;
     }
 
-    public SubscrictionCard getSubscriptionOwner() {
+    public SubscriptionCard getSubscriptionOwner() {
         return subscriptionOwner;
     }
 
-    public void setSubscriptionOwner(SubscrictionCard subscriptionOwner) {
+    public void setSubscriptionOwner(SubscriptionCard subscriptionOwner) {
         this.subscriptionOwner = subscriptionOwner;
     }
 }

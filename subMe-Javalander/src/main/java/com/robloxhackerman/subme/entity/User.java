@@ -11,16 +11,16 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(nullable = false)
     private UUID userId;
-    @Column(nullable = false)
-    private String UserName;
+    @Column(name = "username", nullable = false)
+    private String userName;
     @Column(name = "email", nullable = false)
     private String userEmail;
-    @Column(nullable = false)
+    @Column(name = "password", nullable = false)
     private String userPassword;
+    @Column(name = "suscriptions", nullable = true)
     @OneToMany(fetch = FetchType.LAZY)
-    private List<SubscrictionCard> userSubscription;
+    private List<SubscriptionCard> userSubscription;
 
     public UUID getUserId() {
         return userId;
@@ -31,11 +31,11 @@ public class User {
     }
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
     public String getUserEmail() {
@@ -54,11 +54,11 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public List<SubscrictionCard> getUserSubscription() {
+    public List<SubscriptionCard> getUserSubscription() {
         return userSubscription;
     }
 
-    public void setUserSubscription(List<SubscrictionCard> userSubscription) {
+    public void setUserSubscription(List<SubscriptionCard> userSubscription) {
         this.userSubscription = userSubscription;
     }
 }

@@ -1,22 +1,20 @@
-package com.robloxhackerman.subme.entity;
+package com.robloxhackerman.subme.dto;
 
-import jakarta.persistence.*;
+import com.robloxhackerman.subme.entity.Subscription;
+import com.robloxhackerman.subme.entity.User;
 
 import java.util.Date;
 import java.util.List;
 
-@Entity
-public class SubscrictionCard {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SubscriptionCardDTO {
     private Long cardId;
     private Long cardNumber;
     private Date cardDeath;
-    @OneToMany
     private List<Subscription> cardSubscriptions;
-    @ManyToOne
     private User cardUser;
+
+    public SubscriptionCardDTO() {
+    }
 
     public Long getCardId() {
         return cardId;
