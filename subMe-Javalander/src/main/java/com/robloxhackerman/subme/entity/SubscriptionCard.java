@@ -13,7 +13,7 @@ public class SubscriptionCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long cardId;
-    @Column(name = "number", nullable = false)
+    @Column(name = "number", nullable = false, length = 16)
     private Long cardNumber;
     @Column(name = "expire", nullable = false)
     private Date cardDeath;

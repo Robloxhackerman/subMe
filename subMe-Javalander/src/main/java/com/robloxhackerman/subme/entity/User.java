@@ -1,8 +1,11 @@
 package com.robloxhackerman.subme.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -19,8 +22,14 @@ public class User {
     @Column(name = "password", nullable = false)
     private String userPassword;
     @Column(name = "suscriptions", nullable = true)
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<SubscriptionCard> userSubscription;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+    @Column(name = "roles")
+    private Set<UserRole> userRoles = new HashSet<>();
+
+    public User() {
+    }
 
     public UUID getUserId() {
         return userId;
@@ -60,5 +69,13 @@ public class User {
 
     public void setUserSubscription(List<SubscriptionCard> userSubscription) {
         this.userSubscription = userSubscription;
+    }
+
+    public Set<UserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    public void setUserRoles(Set<UserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 }

@@ -19,4 +19,5 @@ public class SubMeApplication implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/static/");
     }
 
+
 }
