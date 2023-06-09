@@ -3,8 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/subMe-RectAngular[Frontend]/subMe/dist" />
-      <excludeFolder url="file://$MODULE_DIR$/subMe-RectAngular[Frontend]/subMe/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/subMe-RectAngular/subMe/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/subMe-RectAngular/subMe/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

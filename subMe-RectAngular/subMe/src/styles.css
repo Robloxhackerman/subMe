@@ -1,0 +1,56 @@
+:root {
+    --font-color-gray: #616161;
+    --font-color-pink: #FB4962;
+    --font-color-white: #FFFFFF;
+}
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: 'alma-heavy';
+    src: url("/assets/fonts/AlmaMono/AlmaMono-Heavy.woff");
+}
+@font-face {
+    font-family: 'sf-pro-bold';
+    src: url("/assets/fonts/SF Pro/SF-Pro-Text-Bold.otf");
+}
+@font-face {
+    font-family: 'sf-pro-regular';
+    src: url("/assets/fonts/SF Pro/SF-Pro-Text-Regular.otf");
+}
+
+.z-index-bajo {
+    z-index: 1;
+}
+
+.z-index-medio {
+    z-index: 5;
+}
+
+.z-index-alto {
+    z-index: 100;
+}
+
+.button-login {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+    width: 270px;
+    height: 62px;
+
+    background: linear-gradient(321.03deg, #F30123 3.99%, #FF7386 81.19%),
+    linear-gradient(342.56deg, rgba(122, 127, 133, 0.4) -18.07%, rgba(255, 255, 255, 0.4) 104.3%);
+    border: #FF8999 3px solid;
+    box-shadow: inset 2px 2px 2px #FF7386;
+    border-radius: 36px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
