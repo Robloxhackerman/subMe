@@ -1,0 +1,47 @@
+<div class="container-background-sign">
+    <div class="container-sign-title">
+        <p>Hola!</p>
+        <div>
+            <h1>Regístrate!</h1>
+        </div>
+    </div>
+    <div class="flex-center">
+        <div class="container-glass">
+            <form class="form-container"
+                  (ngSubmit)="forSubmit()">
+                <div class="container-input">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input id="name"
+                           type="text"
+                           class="form-text-input"
+                           placeholder="Nombre"
+                           [(ngModel)]="user.name">
+                </div>
+                <div class="container-input">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input id="email"
+                           type="email"
+                           class="form-text-input"
+                           placeholder="Correo electrónico"
+                           [(ngModel)]="user.email">
+                </div>
+                <div class="container-input">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input id="password"
+                           type="password"
+                           class="form-text-input"
+                           placeholder="Contraseña"
+                           [(ngModel)]="user.password">
+                </div>
+                <div class="container-input"
+                     style="justify-content: center; align-items: center">
+                    <input class="button-login"
+                           id="btn-sign-up"
+                           type="submit"
+                           value="REGISTRARSE"
+                           style="color: var(--font-color-white);font-family: sf-pro-bold;font-size: 24px;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
