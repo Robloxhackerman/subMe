@@ -1,16 +1,19 @@
 package com.robloxhackerman.subme.service;
 
-import com.robloxhackerman.subme.entity.User;
-import com.robloxhackerman.subme.entity.UserRole;
+import com.robloxhackerman.subme.dto.UserDto;
 
-import java.util.Optional;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
 public interface UserService {
-    public User createUser(User userm, Set<UserRole> userRoles);
+    public UserDto createUser(UserDto userDto);
 
-    public Optional<User> findUserByUsername(UUID id);
+    public UserDto findUserByUsername(String userEmail);
+
+    public UserDto findById(UUID id);
+    public List<UserDto> findAll();
 
     public void deleteUser(UUID id);
+
+
 }

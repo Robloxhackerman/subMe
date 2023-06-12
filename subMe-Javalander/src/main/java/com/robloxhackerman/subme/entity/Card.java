@@ -3,24 +3,28 @@ package com.robloxhackerman.subme.entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "card", uniqueConstraints = @UniqueConstraint(columnNames = "number"))
-public class SubscriptionCard {
+public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Long cardId;
     @Column(name = "number", nullable = false, length = 16)
     private Long cardNumber;
-    @Column(name = "expire", nullable = false)
-    private Date cardDeath;
-    @OneToMany
-    @Column(name = "subscriptions", nullable = false)
-    private List<Subscription> cardSubscriptions;
-    @ManyToOne
+    @Column(name = "expire_month", length = 2)
+    private Integer cardExpireMonth;
+    @Column(name = "expire_year", length = 2)
+    private Integer cardExpireYear;
+    @Column(name = "subscriptions")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "subscriptionOwner", orphanRemoval = true)
+    private Set<Subscription> cardSubscriptions = new HashSet<>();
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "card_user", nullable = false)
     private User cardUser;
 
@@ -40,19 +44,27 @@ public class SubscriptionCard {
         this.cardNumber = cardNumber;
     }
 
-    public Date getCardDeath() {
-        return cardDeath;
+    public Integer getCardExpireMonth() {
+        return cardExpireMonth;
     }
 
-    public void setCardDeath(Date cardDeath) {
-        this.cardDeath = cardDeath;
+    public void setCardExpireMonth(Integer cardExpireMonth) {
+        this.cardExpireMonth = cardExpireMonth;
     }
 
-    public List<Subscription> getCardSubscriptions() {
+    public Integer getCardExpireYear() {
+        return cardExpireYear;
+    }
+
+    public void setCardExpireYear(Integer cardExpireYear) {
+        this.cardExpireYear = cardExpireYear;
+    }
+
+    public Set<Subscription> getCardSubscriptions() {
         return cardSubscriptions;
     }
 
-    public void setCardSubscriptions(List<Subscription> cardSubscriptions) {
+    public void setCardSubscriptions(Set<Subscription> cardSubscriptions) {
         this.cardSubscriptions = cardSubscriptions;
     }
 

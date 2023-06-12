@@ -1,31 +1,21 @@
-package com.robloxhackerman.subme.entity;
+package com.robloxhackerman.subme.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import com.robloxhackerman.subme.entity.Card;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-@Entity
-@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+public class UserDto {
     private UUID userId;
-    @Column(name = "username", nullable = false)
     private String userName;
-    @Column(name = "email", nullable = false)
     private String userEmail;
-    @Column(name = "password", nullable = false)
     private String userPassword;
-    @Column(name = "suscriptions")
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cardUser", orphanRemoval = true)
-    @JsonIgnore
     private Set<Card> userSubscription = new HashSet<>();
 
-    public User() {
+
+    public UserDto() {
     }
 
     public UUID getUserId() {

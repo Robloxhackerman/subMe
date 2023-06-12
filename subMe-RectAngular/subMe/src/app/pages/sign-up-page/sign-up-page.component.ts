@@ -12,20 +12,10 @@ export class SignUpPageComponent implements OnInit{
         email: '',
         password: ''
     }
+    constructor(
 
-    constructor(private userService: UserService) {
+    ) {
     }
-
     ngOnInit(): void {
-
-    }
-    forSubmit(){
-        console.log(this.user)
-
-        this.userService.registerUser(this.user).subscribe(
-            (data) => {
-                console.log(data)
-            }
-        )
     }
 }

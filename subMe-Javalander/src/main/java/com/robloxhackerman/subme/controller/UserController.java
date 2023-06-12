@@ -1,47 +1,47 @@
 package com.robloxhackerman.subme.controller;
 
-import com.robloxhackerman.subme.entity.Role;
-import com.robloxhackerman.subme.entity.User;
-import com.robloxhackerman.subme.entity.UserRole;
+import com.robloxhackerman.subme.dto.UserDto;
 import com.robloxhackerman.subme.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
+
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api")
 @CrossOrigin
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("/")
-    public User createUser(@RequestBody User user) {
-        Set<UserRole> userRoles = new HashSet<>();
-
-        Role role = new Role();
-        role.setRoleId(1L);
-        role.setRoleName("Normal");
-
-        UserRole userRole = new UserRole();
-        userRole.setUser(user);
-        userRole.setRole(role);
-
-        return userService.createUser(user, userRoles);
+    @PostMapping("/users/")
+    public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
+        return new ResponseEntity<>(userService.createUser(userDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("/{username}")
-    public Optional<User> findUserByUsername(@PathVariable(name = "username") UUID id) {
-        return userService.findUserByUsername(id);
+    @GetMapping("/users")
+    public List<UserDto> findAllUsers() {
+        return userService.findAll();
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable(name = "id") UUID id) {
+    @GetMapping("/users/username/{username}")
+    public ResponseEntity<UserDto> findUserbyUsername(@PathVariable(name = "username") String username) {
+        return ResponseEntity.ok(userService.findUserByUsername(username));
+    }
+
+    @GetMapping("/users/id/{id}")
+    public ResponseEntity<UserDto> findUserById(@PathVariable(name = "id") UUID id) {
+        return ResponseEntity.ok(userService.findById(id));
+    }
+
+    @DeleteMapping("/users/{id}")
+    public ResponseEntity<String> deleteUserById(@PathVariable(name = "id") UUID id) {
         userService.deleteUser(id);
+        return new ResponseEntity<>("Usuario eliminado", HttpStatus.OK);
     }
 }

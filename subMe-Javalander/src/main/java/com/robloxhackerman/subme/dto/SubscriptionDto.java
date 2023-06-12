@@ -1,20 +1,12 @@
-package com.robloxhackerman.subme.entity;
+package com.robloxhackerman.subme.dto;
 
-import jakarta.persistence.*;
+import com.robloxhackerman.subme.entity.Card;
 
-import java.util.Date;
-
-@Entity
-public class Subscription {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SubscriptionDto {
     private Long subscriptionId;
     private String subscriptionName;
     private Float subscriptionPrice;
-    private Date subscriptionDay;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "card_sub", nullable = false)
+    private String subscriptionDay;
     private Card subscriptionOwner;
 
     public Long getSubscriptionId() {
@@ -41,11 +33,11 @@ public class Subscription {
         this.subscriptionPrice = subscriptionPrice;
     }
 
-    public Date getSubscriptionDay() {
+    public String getSubscriptionDay() {
         return subscriptionDay;
     }
 
-    public void setSubscriptionDay(Date subscriptionDay) {
+    public void setSubscriptionDay(String subscriptionDay) {
         this.subscriptionDay = subscriptionDay;
     }
 

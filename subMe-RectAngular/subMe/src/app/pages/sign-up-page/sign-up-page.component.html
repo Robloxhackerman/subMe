@@ -7,31 +7,27 @@
     </div>
     <div class="flex-center">
         <div class="container-glass">
-            <form class="form-container"
-                  (ngSubmit)="forSubmit()">
+            <form class="form-container">
                 <div class="container-input">
                     <label for="name" class="form-label">Nombre</label>
                     <input id="name"
                            type="text"
                            class="form-text-input"
-                           placeholder="Nombre"
-                           [(ngModel)]="user.name">
+                           placeholder="Nombre">
                 </div>
                 <div class="container-input">
                     <label for="email" class="form-label">Correo Electrónico</label>
                     <input id="email"
                            type="email"
                            class="form-text-input"
-                           placeholder="Correo electrónico"
-                           [(ngModel)]="user.email">
+                           placeholder="Correo electrónico">
                 </div>
                 <div class="container-input">
                     <label for="password" class="form-label">Contraseña</label>
                     <input id="password"
                            type="password"
                            class="form-text-input"
-                           placeholder="Contraseña"
-                           [(ngModel)]="user.password">
+                           placeholder="Contraseña">
                 </div>
                 <div class="container-input"
                      style="justify-content: center; align-items: center">
