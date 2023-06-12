@@ -1,5 +1,6 @@
 package com.robloxhackerman.subme.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -12,9 +13,11 @@ public class Subscription {
     private Long subscriptionId;
     private String subscriptionName;
     private Float subscriptionPrice;
-    private Date subscriptionDay;
-    @ManyToOne(fetch = FetchType.LAZY)
+    private Integer subscriptionDay;
+    private Integer subscriptionMonth;
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "card_sub", nullable = false)
+    @JsonBackReference
     private Card subscriptionOwner;
 
     public Long getSubscriptionId() {
@@ -41,12 +44,20 @@ public class Subscription {
         this.subscriptionPrice = subscriptionPrice;
     }
 
-    public Date getSubscriptionDay() {
+    public Integer getSubscriptionDay() {
         return subscriptionDay;
     }
 
-    public void setSubscriptionDay(Date subscriptionDay) {
+    public void setSubscriptionDay(Integer subscriptionDay) {
         this.subscriptionDay = subscriptionDay;
+    }
+
+    public Integer getSubscriptionMonth() {
+        return subscriptionMonth;
+    }
+
+    public void setSubscriptionMonth(Integer subscriptionMonth) {
+        this.subscriptionMonth = subscriptionMonth;
     }
 
     public Card getSubscriptionOwner() {

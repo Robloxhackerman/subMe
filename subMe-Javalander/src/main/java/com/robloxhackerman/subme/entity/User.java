@@ -1,6 +1,9 @@
 package com.robloxhackerman.subme.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -22,7 +25,7 @@ public class User {
     private String userPassword;
     @Column(name = "suscriptions")
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cardUser", orphanRemoval = true)
-    @JsonIgnore
+    @JsonManagedReference
     private Set<Card> userSubscription = new HashSet<>();
 
     public User() {

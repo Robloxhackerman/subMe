@@ -12,8 +12,6 @@ import com.robloxhackerman.subme.entity.Subscription;
 public class DtoConverter {
 
 
-    private DateConverter dateConverter;
-
     ///User
     public User userToEntity(UserDto userDTO) {
         User user = new User();
@@ -76,7 +74,8 @@ public class DtoConverter {
         subscription.setSubscriptionId(subscriptionDTO.getSubscriptionId());
         subscription.setSubscriptionName(subscriptionDTO.getSubscriptionName());
         subscription.setSubscriptionPrice(subscriptionDTO.getSubscriptionPrice());
-        subscription.setSubscriptionDay(dateConverter.stringToDate(subscriptionDTO.getSubscriptionDay()));
+        subscription.setSubscriptionDay(subscriptionDTO.getSubscriptionDay());
+        subscription.setSubscriptionMonth(subscriptionDTO.getSubscriptionMonth());
         subscription.setSubscriptionOwner(subscriptionDTO.getSubscriptionOwner());
 
         return subscription;
@@ -88,7 +87,8 @@ public class DtoConverter {
         subscriptionDTO.setSubscriptionId(subscription.getSubscriptionId());
         subscriptionDTO.setSubscriptionName(subscription.getSubscriptionName());
         subscriptionDTO.setSubscriptionPrice(subscription.getSubscriptionPrice());
-        subscriptionDTO.setSubscriptionDay(dateConverter.dateToString(subscription.getSubscriptionDay()));
+        subscriptionDTO.setSubscriptionDay(subscription.getSubscriptionDay());
+        subscriptionDTO.setSubscriptionMonth(subscription.getSubscriptionMonth());
         subscriptionDTO.setSubscriptionOwner(subscription.getSubscriptionOwner());
 
         return subscriptionDTO;

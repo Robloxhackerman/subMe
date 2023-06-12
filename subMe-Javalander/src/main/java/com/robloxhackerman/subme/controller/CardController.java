@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -17,8 +18,13 @@ public class CardController {
     private CardService cardService;
 
     @PostMapping("/users/{userId}/cards")
-    public ResponseEntity<CardDto> addCard(@PathVariable(name = "userId")UUID userId,
+    public ResponseEntity<CardDto> addCard(@PathVariable(name = "userId") UUID userId,
                                            @RequestBody CardDto cardDto) {
         return new ResponseEntity<>(cardService.addCard(userId, cardDto), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/users/cards")
+    public List<CardDto> findAllCards() {
+        return cardService.findAllCards();
     }
 }

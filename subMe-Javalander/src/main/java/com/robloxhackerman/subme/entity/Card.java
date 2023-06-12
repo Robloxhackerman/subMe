@@ -1,10 +1,9 @@
 package com.robloxhackerman.subme.entity;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
-import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,9 +22,11 @@ public class Card {
     private Integer cardExpireYear;
     @Column(name = "subscriptions")
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "subscriptionOwner", orphanRemoval = true)
+    @JsonManagedReference
     private Set<Subscription> cardSubscriptions = new HashSet<>();
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "card_user", nullable = false)
+    @JsonBackReference
     private User cardUser;
 
     public Long getCardId() {

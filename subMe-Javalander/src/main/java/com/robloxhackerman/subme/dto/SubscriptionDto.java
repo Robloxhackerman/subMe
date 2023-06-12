@@ -6,7 +6,8 @@ public class SubscriptionDto {
     private Long subscriptionId;
     private String subscriptionName;
     private Float subscriptionPrice;
-    private String subscriptionDay;
+    private Integer subscriptionDay;
+    private Integer subscriptionMonth;
     private Card subscriptionOwner;
 
     public Long getSubscriptionId() {
@@ -33,12 +34,20 @@ public class SubscriptionDto {
         this.subscriptionPrice = subscriptionPrice;
     }
 
-    public String getSubscriptionDay() {
+    public Integer getSubscriptionDay() {
         return subscriptionDay;
     }
 
-    public void setSubscriptionDay(String subscriptionDay) {
+    public void setSubscriptionDay(Integer subscriptionDay) {
         this.subscriptionDay = subscriptionDay;
+    }
+
+    public Integer getSubscriptionMonth() {
+        return subscriptionMonth;
+    }
+
+    public void setSubscriptionMonth(Integer subscriptionMonth) {
+        this.subscriptionMonth = subscriptionMonth;
     }
 
     public Card getSubscriptionOwner() {

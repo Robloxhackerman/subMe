@@ -10,7 +10,9 @@ import com.robloxhackerman.subme.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class CardServiceImpl implements CardService {
@@ -32,6 +34,20 @@ public class CardServiceImpl implements CardService {
         Card newCard = cardRepository.save(card);
 
         return dtoConverter.cardToDTO(newCard);
+    }
+
+    @Override
+    public CardDto findCardById(Long id) {
+        return null;
+    }
+
+    @Override
+    public List<CardDto> findAllCards() {
+        List<Card> cardList = cardRepository.findAll();
+        return cardList
+                .stream()
+                .map(card -> dtoConverter.cardToDTO(card))
+                .collect(Collectors.toList());
     }
 
     @Override
