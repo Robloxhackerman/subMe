@@ -11,6 +11,7 @@ public class CardDto {
     private Long cardNumber;
     private Integer cardExpireMonth;
     private Integer cardExpireYear;
+    private Double cardDebt = 0.0;
     private Set<Subscription> cardSubscriptions = new HashSet<>();
     private User cardUser;
 
@@ -48,6 +49,14 @@ public class CardDto {
 
     public void setCardExpireYear(Integer cardExpireYear) {
         this.cardExpireYear = cardExpireYear;
+    }
+
+    public Double getCardDebt() {
+        return cardDebt;
+    }
+
+    public void setCardDebt(Double cardDebt) {
+        this.cardDebt = cardDebt;
     }
 
     public Set<Subscription> getCardSubscriptions() {

@@ -3,15 +3,17 @@ package com.robloxhackerman.subme.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.UUID;
+
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class SubscriptionNotFoundException extends RuntimeException {
+public class ResourceNotFoundException extends RuntimeException {
 
     private String resourceName;
     private String fieldName;
-    private Long filedValue;
+    private String filedValue;
 
-    public SubscriptionNotFoundException(String resourceName, String fieldName, Long filedValue) {
+    public ResourceNotFoundException(String resourceName, String fieldName, String filedValue) {
         super(String.format("%s not found with : %s : '%s'", resourceName, fieldName, filedValue));
         this.resourceName = resourceName;
         this.fieldName = fieldName;
@@ -34,11 +36,11 @@ public class SubscriptionNotFoundException extends RuntimeException {
         this.fieldName = fieldName;
     }
 
-    public Long getFiledValue() {
+    public String getFiledValue() {
         return filedValue;
     }
 
-    public void setFiledValue(Long filedValue) {
+    public void setFiledValue(String filedValue) {
         this.filedValue = filedValue;
     }
 }

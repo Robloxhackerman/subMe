@@ -5,7 +5,7 @@ import com.robloxhackerman.subme.entity.Card;
 public class SubscriptionDto {
     private Long subscriptionId;
     private String subscriptionName;
-    private Float subscriptionPrice;
+    private Double subscriptionPrice;
     private Integer subscriptionDay;
     private Integer subscriptionMonth;
     private Card subscriptionOwner;
@@ -26,11 +26,11 @@ public class SubscriptionDto {
         this.subscriptionName = subscriptionName;
     }
 
-    public Float getSubscriptionPrice() {
+    public Double getSubscriptionPrice() {
         return subscriptionPrice;
     }
 
-    public void setSubscriptionPrice(Float subscriptionPrice) {
+    public void setSubscriptionPrice(Double subscriptionPrice) {
         this.subscriptionPrice = subscriptionPrice;
     }
 

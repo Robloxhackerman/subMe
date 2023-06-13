@@ -3,7 +3,7 @@ package com.robloxhackerman.subme.service;
 import com.robloxhackerman.subme.utilities.DtoConverter;
 import com.robloxhackerman.subme.dto.UserDto;
 import com.robloxhackerman.subme.entity.User;
-import com.robloxhackerman.subme.exception.UserNotFoundException;
+import com.robloxhackerman.subme.exception.ResourceNotFoundException;
 import com.robloxhackerman.subme.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto findById(UUID id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException("User", "id", id));
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", id.toString()));
         return dtoConverter.userToDTO(user);
     }
 

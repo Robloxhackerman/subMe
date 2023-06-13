@@ -4,7 +4,7 @@ import com.robloxhackerman.subme.dto.CardDto;
 import com.robloxhackerman.subme.utilities.DtoConverter;
 import com.robloxhackerman.subme.entity.Card;
 import com.robloxhackerman.subme.entity.User;
-import com.robloxhackerman.subme.exception.UserNotFoundException;
+import com.robloxhackerman.subme.exception.ResourceNotFoundException;
 import com.robloxhackerman.subme.repository.CardRepository;
 import com.robloxhackerman.subme.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class CardServiceImpl implements CardService {
     public CardDto addCard(UUID userId, CardDto cardDto) {
         Card card = dtoConverter.cardToEntity(cardDto);
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User", "id", userId));
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userId.toString()));
 
         card.setCardUser(user);
         Card newCard = cardRepository.save(card);

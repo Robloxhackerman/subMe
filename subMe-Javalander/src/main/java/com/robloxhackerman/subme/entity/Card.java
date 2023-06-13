@@ -20,6 +20,8 @@ public class Card {
     private Integer cardExpireMonth;
     @Column(name = "expire_year", length = 2)
     private Integer cardExpireYear;
+    @Column(name = "debt", nullable = true)
+    private Double cardDebt = 0.0;
     @Column(name = "subscriptions")
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "subscriptionOwner", orphanRemoval = true)
     @JsonManagedReference
@@ -59,6 +61,14 @@ public class Card {
 
     public void setCardExpireYear(Integer cardExpireYear) {
         this.cardExpireYear = cardExpireYear;
+    }
+
+    public Double getCardDebt() {
+        return cardDebt;
+    }
+
+    public void setCardDebt(Double cardDebt) {
+        this.cardDebt = Math.round(cardDebt*100.0)/100.0;
     }
 
     public Set<Subscription> getCardSubscriptions() {

@@ -3,7 +3,7 @@ package com.robloxhackerman.subme.service;
 import com.robloxhackerman.subme.dto.SubscriptionDto;
 import com.robloxhackerman.subme.entity.Card;
 import com.robloxhackerman.subme.entity.Subscription;
-import com.robloxhackerman.subme.exception.CardNotFoundException;
+import com.robloxhackerman.subme.exception.ResourceNotFoundException;
 import com.robloxhackerman.subme.pagination.SubscriptionResponse;
 import com.robloxhackerman.subme.repository.CardRepository;
 import com.robloxhackerman.subme.repository.SubscriptionRepository;
@@ -31,10 +31,16 @@ public class SubscriptionServiceImpl implements SubscriptionService {
     public SubscriptionDto addSubscription(Long id, SubscriptionDto subscriptionDto) {
         Subscription subscription = dtoConverter.subscriptionToEntity(subscriptionDto);
         Card card = cardRepository.findById(id)
-                .orElseThrow(() -> new CardNotFoundException("Card", "id", id));
+                .orElseThrow(() -> new ResourceNotFoundException("Card", "id", id.toString()));
+
+        Double cardDebt = card.getCardDebt();
+        Double subPrice = subscription.getSubscriptionPrice();
+        Double rounded = Math.round((cardDebt + subPrice)*100.0)/100.0;
+        card.setCardDebt(rounded);
 
         subscription.setSubscriptionOwner(card);
         Subscription newSubscription = subscriptionRepository.save(subscription);
+
 
         return dtoConverter.subscriptionToDTO(newSubscription);
     }

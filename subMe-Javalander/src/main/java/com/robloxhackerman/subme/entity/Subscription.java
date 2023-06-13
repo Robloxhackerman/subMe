@@ -12,7 +12,7 @@ public class Subscription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long subscriptionId;
     private String subscriptionName;
-    private Float subscriptionPrice;
+    private Double subscriptionPrice;
     private Integer subscriptionDay;
     private Integer subscriptionMonth;
     @ManyToOne(fetch = FetchType.EAGER)
@@ -36,11 +36,11 @@ public class Subscription {
         this.subscriptionName = subscriptionName;
     }
 
-    public Float getSubscriptionPrice() {
+    public Double getSubscriptionPrice() {
         return subscriptionPrice;
     }
 
-    public void setSubscriptionPrice(Float subscriptionPrice) {
+    public void setSubscriptionPrice(Double subscriptionPrice) {
         this.subscriptionPrice = subscriptionPrice;
     }
 
