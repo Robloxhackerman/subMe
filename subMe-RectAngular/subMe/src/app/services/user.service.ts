@@ -10,6 +10,16 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
     public registerUser(user: any) {
-      return this.httpClient.post(`${baseUrl}/users/`, user);
+      return this.httpClient.post(`${baseUrl}/users`, user)
+          .subscribe( res => {
+              console.log("Persona guardada", user)
+          });
+    }
+
+    public findUser(user: any) {
+        return this.httpClient.get(`${baseUrl}/users`, user)
+            .subscribe( res => {
+                console.log("Persona encontrada", user)
+            });
     }
 }

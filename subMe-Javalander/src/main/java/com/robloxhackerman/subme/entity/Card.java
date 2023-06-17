@@ -2,6 +2,7 @@ package com.robloxhackerman.subme.entity;
 
 import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -68,7 +69,7 @@ public class Card {
     }
 
     public void setCardDebt(Double cardDebt) {
-        this.cardDebt = Math.round(cardDebt*100.0)/100.0;
+        this.cardDebt = Math.round(cardDebt * 100.0) / 100.0;
     }
 
     public Set<Subscription> getCardSubscriptions() {

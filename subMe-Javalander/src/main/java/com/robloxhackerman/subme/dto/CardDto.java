@@ -2,6 +2,8 @@ package com.robloxhackerman.subme.dto;
 
 import com.robloxhackerman.subme.entity.Subscription;
 import com.robloxhackerman.subme.entity.User;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import java.util.HashSet;
 import java.util.Set;

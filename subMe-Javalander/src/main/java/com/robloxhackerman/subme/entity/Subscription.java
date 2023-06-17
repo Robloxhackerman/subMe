@@ -2,6 +2,7 @@ package com.robloxhackerman.subme.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.Date;
 

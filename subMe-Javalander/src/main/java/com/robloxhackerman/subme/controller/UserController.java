@@ -2,9 +2,11 @@ package com.robloxhackerman.subme.controller;
 
 import com.robloxhackerman.subme.dto.UserDto;
 import com.robloxhackerman.subme.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,11 +21,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/users/")
-    public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userService.createUser(userDto), HttpStatus.CREATED);
-    }
-
     @GetMapping("/users")
     public List<UserDto> findAllUsers() {
         return userService.findAll();
@@ -34,14 +31,19 @@ public class UserController {
         return ResponseEntity.ok(userService.findUserByUsername(username));
     }
 
-    @GetMapping("/users/id/{id}")
-    public ResponseEntity<UserDto> findUserById(@PathVariable(name = "id") UUID id) {
-        return ResponseEntity.ok(userService.findById(id));
+    @GetMapping("/users/{id}")
+    public ResponseEntity<UserDto> findUserById(@PathVariable(name = "id") UUID uuid) {
+        return ResponseEntity.ok(userService.findById(uuid));
+    }
+    @PutMapping("/user/{id}")
+    public ResponseEntity<UserDto> updateUser(@PathVariable(name = "id")UUID uuid,
+                                              @RequestBody UserDto userDto){
+        return new ResponseEntity<>(userService.updateUser(userDto, uuid),HttpStatus.OK);
     }
 
     @DeleteMapping("/users/{id}")
-    public ResponseEntity<String> deleteUserById(@PathVariable(name = "id") UUID id) {
-        userService.deleteUser(id);
+    public ResponseEntity<String> deleteUserById(@PathVariable(name = "id") UUID uuid) {
+        userService.deleteUser(uuid);
         return new ResponseEntity<>("Usuario eliminado", HttpStatus.OK);
     }
 }

@@ -7,13 +7,9 @@ import java.util.UUID;
 
 public interface UserService {
     public UserDto createUser(UserDto userDto);
-
     public UserDto findUserByUsername(String userEmail);
-
-    public UserDto findById(UUID id);
+    public UserDto findById(UUID uuid);
     public List<UserDto> findAll();
-
-    public void deleteUser(UUID id);
-
-
+    public UserDto updateUser(UserDto userDto, UUID uuid);
+    public void deleteUser(UUID uuid);
 }
