@@ -9,13 +9,15 @@ import {SignUpPageComponent} from './pages/sign-up-page/sign-up-page.component';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         StartPageComponent,
         SignInPageComponent,
-        SignUpPageComponent
+        SignUpPageComponent,
+        HomePageComponent
     ],
     imports: [
         BrowserModule,
