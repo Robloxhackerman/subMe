@@ -1,7 +1,10 @@
 :root {
-    --font-color-gray: #616161;
+
     --font-color-pink: #FB4962;
     --font-color-white: #FFFFFF;
+    --font-color-darkgray: #2F2F2F;
+    --font-color-gray: #616161;
+    --font-color-lightgray: #828282;
 }
 * {
     padding: 0px;
@@ -23,6 +26,10 @@
 @font-face {
     font-family: 'sf-pro-medium';
     src: url("/assets/fonts/SF Pro/SF-Pro-Text-Medium.otf");
+}
+@font-face {
+    font-family: 'sf-pro-semibold';
+    src: url("/assets/fonts/SF Pro/SF-Pro-Text-Semibold.otf");
 }
 
 .z-index-bajo {
@@ -68,6 +75,7 @@
     width: 100%;
     position: absolute;
     top: 0;
+    left: 0;
     display: grid;
     grid-template-rows: 1fr 2fr;
 }

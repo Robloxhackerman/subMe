@@ -9,13 +9,17 @@ import {SignUpPageComponent} from './pages/sign-up-page/sign-up-page.component';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './pages/home/home.component';
+import { SubsCardsComponent } from './components/subs-cards/subs-cards.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         StartPageComponent,
         SignInPageComponent,
-        SignUpPageComponent
+        SignUpPageComponent,
+        HomeComponent,
+        SubsCardsComponent
     ],
     imports: [
         BrowserModule,
