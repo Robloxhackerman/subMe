@@ -1,0 +1,35 @@
+.card-container {
+    height:fit-content;
+    width: 100px;
+
+    background: linear-gradient(342.56deg, rgba(122, 127, 133, 0.4) -18.07%,
+    rgba(255, 255, 255, 0.4) 104.3%),
+    linear-gradient(133.76deg, #FCFCFC -18.17%, #DBDBDB 140.27%);
+
+    background-blend-mode: soft-light, normal;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), inset 2px 2px 3px #F4F4F4;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+}
+.p-smeibold {
+    font-family: "sf-pro-semibold";
+    font-size: 16px;
+    color: var(--font-color-darkgray);
+}
+.p-regular {
+    font-family: "sf-pro-regular";
+    font-size: 10px;
+    color: var(--font-color-lightgray);
+}
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

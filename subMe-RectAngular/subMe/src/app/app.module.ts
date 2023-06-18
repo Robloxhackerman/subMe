@@ -9,7 +9,8 @@ import {SignUpPageComponent} from './pages/sign-up-page/sign-up-page.component';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SubsCardsComponent } from './components/subs-cards/subs-cards.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
         StartPageComponent,
         SignInPageComponent,
         SignUpPageComponent,
-        HomePageComponent
+        HomeComponent,
+        SubsCardsComponent
     ],
     imports: [
         BrowserModule,
