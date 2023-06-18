@@ -31,6 +31,10 @@
     font-family: 'sf-pro-semibold';
     src: url("/assets/fonts/SF Pro/SF-Pro-Text-Semibold.otf");
 }
+@font-face {
+    font-family: 'sf-pro-heavy';
+    src: url("/assets/fonts/SF Pro/SF-Pro-Text-Heavy.otf");
+}
 
 .z-index-bajo {
     z-index: 1;
@@ -137,3 +141,4 @@
     margin-bottom: 5px;
     font-size: 13px;
 }
+

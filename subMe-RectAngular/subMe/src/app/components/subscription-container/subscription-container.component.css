@@ -1,0 +1,12 @@
+.flex-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.scroll-horizontal {
+    overflow-y: auto;
+    display: flex;
+    gap: 20px;
+    padding: 10px 5px;
+}

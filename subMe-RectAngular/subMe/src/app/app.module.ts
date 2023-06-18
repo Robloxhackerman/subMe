@@ -11,6 +11,9 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './pages/home/home.component';
 import { SubsCardsComponent } from './components/subs-cards/subs-cards.component';
+import { CardComponent } from './components/card/card.component';
+import { SubscriptionContainerComponent } from './components/subscription-container/subscription-container.component';
+import { RegisterSubscriptionComponent } from './pages/register-subscription/register-subscription.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +22,10 @@ import { SubsCardsComponent } from './components/subs-cards/subs-cards.component
         SignInPageComponent,
         SignUpPageComponent,
         HomeComponent,
-        SubsCardsComponent
+        SubsCardsComponent,
+        CardComponent,
+        SubscriptionContainerComponent,
+        RegisterSubscriptionComponent
     ],
     imports: [
         BrowserModule,
