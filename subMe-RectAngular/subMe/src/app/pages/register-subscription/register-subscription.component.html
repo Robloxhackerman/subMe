@@ -1,10 +1,104 @@
-<ion-input
-    type="email"
-    fill="solid"
-    label="Email"
-    labelPlacement="floating"
-    helperText="Enter a valid email"
-    errorText="Invalid email"
-    ngModel
-    email
-></ion-input>
+<div
+    style="gap: 20px; display:flex; flex-direction: column; justify-content: center; align-items: center; height: 100%">
+    <ion-card class="card-form">
+        <div>
+            <img style="width: 80px;"
+                 src="../../../assets/icons/{{ pepe }}-color.svg">
+        </div>
+        <div>
+            <ion-input
+                color="primary"
+                maxlength="16"
+                minlength="16"
+                type="text"
+                fill="solid"
+                placeholder="XXXX XXXX XXXX XXXX"
+                errorText="Invalid email"
+                [(ngModel)]="cardNumber"
+            ></ion-input>
+            <div class="date-container">
+                <div></div>
+                <div class="date">
+                    <ion-input
+                        color="primary"
+                        maxlength="2"
+                        minlength="2"
+                        type="text"
+                        fill="solid"
+                        errorText="Invalid email"
+                        [(ngModel)]="cardExpireMonth"
+                    ></ion-input>
+                    <div style="display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column">
+                        <p style="font-size: 20px">/</p>
+                    </div>
+                    <ion-input
+                        color="primary"
+                        maxlength="2"
+                        minlength="2"
+                        type="text"
+                        fill="solid"
+                        errorText="Invalid email"
+                        [(ngModel)]="cardExpireYear"
+                    ></ion-input>
+                </div>
+            </div>
+        </div>
+    </ion-card>
+    <ion-card class="sub-form">
+        <ion-input
+            type="text"
+            fill="solid"
+            label="Nombre"
+            labelPlacement="floating"
+            errorText="Invalid email"
+            [(ngModel)]="subscriptionName"
+        ></ion-input>
+        <ion-input
+            type="text"
+            fill="solid"
+            label="Precio"
+            labelPlacement="floating"
+            errorText="Invalid email"
+            [(ngModel)]="subscriptionPrice"
+        ></ion-input>
+        <div>
+            <div class="date">
+                <ion-input
+                    color="primary"
+                    maxlength="2"
+                    minlength="2"
+                    label="Dia"
+                    type="text"
+                    fill="solid"
+                    errorText="Invalid email"
+                    [(ngModel)]="subscriptionDay"
+                ></ion-input>
+                <div style="display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column">
+                    <p style="font-size: 20px">/</p>
+                </div>
+                <ion-input
+                    color="primary"
+                    maxlength="2"
+                    minlength="2"
+                    label="Mes"
+                    type="text"
+                    fill="solid"
+                    errorText="Invalid email"
+                    [(ngModel)]="subscriptionMonth"
+                ></ion-input>
+            </div>
+        </div>
+        <ion-button
+            button-type="button"
+            expand="block"
+            color="danger"
+        (click)="saveSubscription">Guardar
+        </ion-button>
+    </ion-card>
+</div>

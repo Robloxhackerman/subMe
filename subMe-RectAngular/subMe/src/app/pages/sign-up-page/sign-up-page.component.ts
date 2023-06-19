@@ -23,6 +23,6 @@ export class SignUpPageComponent implements OnInit{
 
     addUser(){
         console.log(this.user)
-        this.userService.registerUser(this.user);
+        this.userService.registerUser(JSON.stringify(this.user));
     }
 }

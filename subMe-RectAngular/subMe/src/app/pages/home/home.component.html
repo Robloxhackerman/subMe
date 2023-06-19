@@ -1,12 +1,23 @@
 <div class="home-container">
     <div>
-        <div class="title-container">
-            <div>
-                <img src="../../../assets/icons/user.svg"
-                     height="55px">
+        <div class="header">
+            <div class="title-container">
+                <div>
+                    <img src="../../../assets/icons/user.svg"
+                         height="55px">
+                </div>
+                <div>
+                    <h1 id="title">¡Hola {{ user.userName}}!</h1>
+                </div>
             </div>
             <div>
-                <h1 id="title">¡Hola Denisse!</h1>
+                <button routerLink="register-sub">
+                    <a href="">
+                        <img src="../../../assets/icons/mas.svg"
+                             height="25px"
+                             style="fill: var(--font-color-pink)">
+                    </a>
+                </button>
             </div>
         </div>
     </div>

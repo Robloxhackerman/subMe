@@ -1,0 +1,26 @@
+.form {
+    padding: 20px;
+}
+.card-form {
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: fit-content;
+}
+
+.date {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.date-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.sub-form {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

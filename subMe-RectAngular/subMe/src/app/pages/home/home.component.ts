@@ -6,15 +6,11 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-    pepe:String = "";
-    cardNumber:number = 4;
+    user = {
+        userName: ''
+    };
 
     ngOnInit(): void {
-        if (this.cardNumber.toString().charAt(0) === "5") {
-            this.pepe = "mastercard";
-        } else {
-            this.pepe = "visa";
-        }
     }
 
 }
