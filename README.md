@@ -45,10 +45,10 @@ MVP for my final project at Holberton School Uruguay.
 
 - `MVP`
 > #### Backend
-> - **subMe-Javalander[Backend]:** In our latest version "Musica" was added, with it's respective repository, service, service implementation and all of previous properties as seen in "BarRes" and "Teatros". It also has corresponding ports in order for the frontend to access it.
+> - **subMe-Javalander[Backend]:**.
 
 > #### Frontend
-> - **subMe-Rectangular[Frontend]:** Version was updated regarding CSS and aiming to improve user experience. Populated directly from our db in AWS RDS.
+> - **subMe-Rectangular[Frontend]:**.
 
 ----
 
